@@ -1,0 +1,1 @@
+<h1>Hello <small><?php echo $gineba_shegeci; ?></small></h1>

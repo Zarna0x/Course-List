@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
+@import url('https://fonts.googleapis.com/css?family=Ultra');
+
+body,html {
+	width: 100%;
+	height: 100%;
+}
+
+body{
+  background-color: #d9f9c5;
+}
+#header {
+   height: 45px;
+   background-color: black;
+   position: fixed;
+   width: 100%;
+   z-index: 99999999999;
+}
+
+#menu > ul {
+  float: right;
+  display: inline-block;
+  list-style: none;
+}
+
+#menu > ul > li {
+	padding: 5px;
+	font-size: 150%;
+	display: inline-block;
+
+}
+
+#menu > ul > li > a {
+	font-family: 'Alegreya Sans', sans-serif;
+	color: white;
+	text-decoration: none;
+}
+
+
+#menu > ul > li:not(.langimg):hover > a{
+	cursor: pointer;
+	/*background-color: #d9f9c5;*/
+	color: #d9f9c5;
+	/*border: 1px solid #d9f9c5;
+	border-radius: 15px;*/
+}
+
+#menu > a {
+	background-image: url('http://azry.com/sites/default/files/home-icon.png');
+    background-size: cover;
+    background-position: center bottom;
+    color: white;
+    float: left;
+	margin: 10px;
+	height: 30px;
+    width: 30px;
+}
+.drowpdown {
+	background-color: black;
+}
+/*
+#cont{
+
+   box-shadow: 10px 10px 5px #888888;
+}*/
+
+#tableheader {
+	font-size: 550%;
+	font-family: 'Baloo Bhaina', cursive;
+
+}
+
+#table_head p {
+	font-size: 120%;
+	font-family: 'Alegreya Sans', sans-serif;
+}
+
+.black-fa{
+	cursor: pointer;
+	color: black;
+}
+
+.course_name{
+     padding-top: 30px !important;
+     font-family: 'Baloo Bhaina', cursive;
+     font-size: 120%;
+}
+
+#panel_container{
+  box-shadow: 10px 10px 5px #888888 !important;
+  position: absolute;
+  top: 45px;
+  max-width: 100%;
+}
+
+img#course_image{
+	width:246px;
+	height:138px;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #d9f9c5;
+}
+
+.panel-heading-completed {
+  background-color: #a5e597 !important;	
+}
+
+#add-button{
+	font-size: 150%;
+	font-family: 'Baloo Bhaina', cursive;
+}
+
+#search-button{
+	font-size: 120%;
+	font-weight: bold;
+	font-family: 'Alegreya Sans', sans-serif;
+}
+
+/*Modal styles*/
+.modal-title{
+	font-size: 150%;
+	font-weight: bold;
+	font-family: 'Alegreya Sans', sans-serif;
+}
+.modal-body label {
+	font-size: 105%;
+	font-weight: bolder;
+ font-family: 'Alegreya Sans', sans-serif;
+
+}
+
+#active_heading {
+	background-color: #8cdbcc !important;
+}
+
+.input-group-addon {
+	padding-top: 3%;
+	background-color:#93bcff;
+    color: white;
+ 	font-family: 'Baloo Bhaina', cursive;
+}
+.lang_img {
+	width: 25px;
+	height: 25px;
+}
+
+.langimg {
+
+	cursor: pointer;
+}
+#geo{
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+ul#geo_lang_class > li {
+	padding-top: 8px !important;
+	font-size: 130% !important;
+}
+
+
+.geo_thead > tr > th >  p {
+	font-size: 100% !important;
+}
+
+.auth-container {
+	position: absolute;
+    top: 45px;
+}
+
+.main-panel {
+	box-shadow: 20px 20px 5px #888888 !important;
+}
+
+#myModal {
+
+	background-color: rgba(0,255,0,0.188) !important;
+}
+
+.modal-content {
+     position: absolute;
+	top: 15px !important;
+}
+.del_label {
+  font-weight: bold;
+  font-size: 102%;
+  padding: 7px;
+  cursor: pointer;
+}
+/*
+#add_stuff_btn {
+	margin-top: 20px;
+}
+
+.loader_wrapper {
+  display: -webkit-flex; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center;  
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  z-index: 999999999999999999;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+*/
