@@ -19,3 +19,10 @@ $hook['post_controller_constructor'] = [
     'filepath' => 'hooks',
     'params'   => array('red', 'yellow', 'blue')
 ];
+
+ $hook['display_override'] = array(
+    'class' => 'DisplayHook',
+    'function' => 'captureOutput',
+    'filename' => 'DisplayHook.php',
+    'filepath' => 'hooks'
+  );

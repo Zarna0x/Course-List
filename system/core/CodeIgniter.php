@@ -155,6 +155,7 @@ if ( ! is_php('5.4'))
  * Note: Since the config file data is cached it doesn't
  * hurt to load it here.
  */
+
 	if ( ! empty($assign_to_config['subclass_prefix']))
 	{
 		get_config(array('subclass_prefix' => $assign_to_config['subclass_prefix']));
@@ -165,6 +166,7 @@ if ( ! is_php('5.4'))
  *  Should we use a Composer autoloader?
  * ------------------------------------------------------
  */
+
 	if ($composer_autoload = config_item('composer_autoload'))
 	{
 		if ($composer_autoload === TRUE)
@@ -182,6 +184,8 @@ if ( ! is_php('5.4'))
 			log_message('error', 'Could not find the specified $config[\'composer_autoload\'] path: '.$composer_autoload);
 		}
 	}
+
+
 
 /*
  * ------------------------------------------------------
@@ -205,7 +209,7 @@ if ( ! is_php('5.4'))
  * ------------------------------------------------------
  */
 	$EXT->call_hook('pre_system');
-
+    
 /*
  * ------------------------------------------------------
  *  Instantiate the config class
@@ -221,11 +225,14 @@ if ( ! is_php('5.4'))
 	// Do we have any manually set config items in the index.php file?
 	if (isset($assign_to_config) && is_array($assign_to_config))
 	{
+
 		foreach ($assign_to_config as $key => $value)
 		{
 			$CFG->set_item($key, $value);
 		}
 	}
+
+
 
 /*
  * ------------------------------------------------------
@@ -289,6 +296,7 @@ if ( ! is_php('5.4'))
 	require_once(BASEPATH.'core/compat/password.php');
 	require_once(BASEPATH.'core/compat/standard.php');
 
+
 /*
  * ------------------------------------------------------
  *  Instantiate the UTF-8 class
@@ -348,6 +356,7 @@ if ( ! is_php('5.4'))
  */
 	$LANG =& load_class('Lang', 'core');
 
+
 /*
  * ------------------------------------------------------
  *  Load the app controller and local controller
@@ -356,7 +365,7 @@ if ( ! is_php('5.4'))
  */
 	// Load the base controller class
 	require_once BASEPATH.'core/Controller.php';
-
+	
 	/**
 	 * Reference to the CI_Controller method.
 	 *
@@ -368,12 +377,15 @@ if ( ! is_php('5.4'))
 	{
 		return CI_Controller::get_instance();
 	}
+    
+    //$ci = &get_instance();
+	//var_dump($ci);
+
 
 	if (file_exists(APPPATH.'core/'.$CFG->config['subclass_prefix'].'Controller.php'))
 	{
 		require_once APPPATH.'core/'.$CFG->config['subclass_prefix'].'Controller.php';
 	}
-
 	// Set a mark point for benchmarking
 	$BM->mark('loading_time:_base_classes_end');
 
@@ -397,6 +409,7 @@ if ( ! is_php('5.4'))
  *  or the loader class can be called via the URI, nor can
  *  controller methods that begin with an underscore.
  */
+
 
 	$e404 = FALSE;
 	$class = ucfirst($RTR->class);
@@ -495,6 +508,7 @@ if ( ! is_php('5.4'))
 		}
 	}
 
+
 	if ($method !== '_remap')
 	{
 		$params = array_slice($URI->rsegments, 2);
@@ -529,7 +543,10 @@ if ( ! is_php('5.4'))
  *  Call the requested method
  * ------------------------------------------------------
  */
-	call_user_func_array(array(&$CI, $method), $params);
+
+	if (ENVIRONMENT != 'testing') {
+		call_user_func_array(array(&$CI, $method), $params);
+	}
 
 	// Mark a benchmark end point
 	$BM->mark('controller_execution_time_( '.$class.' / '.$method.' )_end');
@@ -557,3 +574,4 @@ if ( ! is_php('5.4'))
  * ------------------------------------------------------
  */
 	$EXT->call_hook('post_system');
+  
