@@ -1,3 +1,4 @@
+
 <?php
 if ($this->session->flashdata('register_success') != null) {
 ?>
@@ -10,7 +11,7 @@ if ($this->session->flashdata('register_success') != null) {
      sweetAlert("<?php echo $this->session->flashdata('login_success'); ?>", "", "success");
   </script>
 
-<?php
+<?php 
 }?>
 <?php
 if ($this->session->flashdata('delete_info') != null) {
