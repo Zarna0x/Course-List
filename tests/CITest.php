@@ -6,9 +6,7 @@
     {
       // Load CI instance normally
       $this->CI = &get_instance();
-      
-      $x = str_clean($text);
-      var_dump($x);
+      $this->CI->load->model('course_model');
     }
     public function testGetPost()
     {

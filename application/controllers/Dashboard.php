@@ -197,6 +197,26 @@ class Dashboard extends MY_Controller
      }
   }
 
+  public function deleteStuff($id)
+  {
+        $url = parse_url($this->agent->referrer());
+        if (!is_logged() || empty($this->agent->referrer()) || strpos($url['path'],"dashboard/stuff") == false) {
+          redirect('/');
+        }
+       
+
+        $del = $this->stuff_model->deleteStuffById($id,$this->session->userdata('user')['id']);
+        if ($del) {
+            $this->session->set_flashdata('delete_info',"Course Deleted Succesfully");   
+            redirect($this->agent->referrer());
+        } else {
+          redirect('/');
+        }
+
+
+
+  }
+
 
 
 }

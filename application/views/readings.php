@@ -40,7 +40,9 @@
                     <?php endforeach; ?>
                     </td>
                     <td>
-                      <span class="label label-danger del_label">Delete</span>
+                      <a href="<?php echo $base_url.'dashboard/deleteStuff/'.$item->id; ?>" id="delete_a_btn">
+                        <span class="label label-danger del_label">Delete</span>
+                      </a>
                     </td>
                   </tr>
 

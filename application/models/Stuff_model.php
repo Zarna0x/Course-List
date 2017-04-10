@@ -34,6 +34,36 @@ class Stuff_model extends CI_Model
       }
      
   }
+
+  public function stuffExists($id) {
+     $this->db->where('id',intval($id));
+     $query = $this->db->get('stuff');
+     if ($query->num_rows() == 1) {
+        return true;
+     } else  {
+      return false;
+     }
+     
+  }
+
+  public function deleteStuffById($stuffId,$user_id)
+  {
+    if (!$this->stuffExists($stuffId)) {
+        return false;
+    }
+
+    $delete = $this->db->delete('stuff',[
+          'id' => intval($stuffId),
+           'user_id' => intval($user_id)
+        ]);
+       
+       if ($this->db->affected_rows() != 0) {
+           return true;
+       } else {
+
+         return false;
+       } 
+  }
 }
 
 ?>
